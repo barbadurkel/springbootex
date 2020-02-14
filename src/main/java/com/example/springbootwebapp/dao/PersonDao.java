@@ -3,6 +3,7 @@ package com.example.springbootwebapp.dao;
 import com.example.springbootwebapp.model.Person;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface PersonDao {
@@ -17,6 +18,14 @@ public interface PersonDao {
     }
 
     List<Person> selectAllPeople();
+
+    // Java 8 Optional : A container object which may or may not contain a non-null value
+    // isPresent() => true/false , get() -> returns the actual value
+    Optional<Person> selectPersonById(UUID id);
+
+    int deletePersonById(UUID id);
+
+    int updatePersonById(UUID id, Person person);
 
 
 }
