@@ -32,11 +32,13 @@ public class PersonController {
     }
 
     // The UUID is retrieved from the path of the URL
+    // orElse method is equivalent to : isPresent() + get()
     @GetMapping(path = "{id}")
     public Person getPersonById(@PathVariable("id") UUID id){
         return personService.getPersonById(id)
                 .orElse(null);
     }
+
 
     @DeleteMapping(path = "{id}")
     public void deletePersonById(@PathVariable("id") UUID id){
