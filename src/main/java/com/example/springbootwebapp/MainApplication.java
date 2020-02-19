@@ -9,9 +9,7 @@ public class MainApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MainApplication.class, args);
 
-		Runnable runnable = () -> {
-			System.out.println("I am Running "+ Thread.currentThread().getName());
-		};
+		Runnable runnable = () -> System.out.println("I am Running "+ Thread.currentThread().getName());
 
 		Thread t = new Thread(runnable);
 		// t.setName("My Thread");
